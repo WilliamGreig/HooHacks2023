@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 class Student(models.Model):
-    computing_id = models.CharField()
+    computing_id = models.CharField(max_length=10)
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
     year = models.IntegerField()
@@ -13,7 +13,7 @@ class Student(models.Model):
 class Assignment(models.Model):
     title = models.CharField(max_length=50)
     description = models.CharField(max_length=250)
-    link = models.CharField()
+    link = models.CharField(max_length=200)
     due_date = models.DateTimeField()
 
     def __str__(self):
@@ -29,7 +29,7 @@ class Course(models.Model):
         return self.department + ": " + self.title
 
 class Instructor(models.Model):
-    computing_id = models.CharField()
+    computing_id = models.CharField(max_length=10)
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
     courses = models.ManyToManyField(Course)

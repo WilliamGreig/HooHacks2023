@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+{% include 'base.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    {% for course in course_list %}
+        <a href="/course/{{ course.id }}">
+            {{ course.title }} -- {{ course.department }}
+        </a> <br>
+    {% endfor %}
+</div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% include 'base.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="/course/create" method="post">
+      {% csrf_token %}
+    <label for="title">Title: </label><br>
+    <input id="title" type="text" name="title" value=""> <br>
+
+    <label for="department">Department: </label><br>
+    <input id="department" type="text" name="department" value=""><br><br>
+
+    <input type="submit" value="OK">
+</form>
+
+</body>
+</html>
